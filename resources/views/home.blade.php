@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Kasirku.com</title>
+    <title>{{ $title }}</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -84,7 +84,7 @@
                                             <a href="#"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>                                     
                                         <hr class="my-2">
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -110,6 +110,7 @@
                         </a>
                     </li>
                     <li class="nav-label">UI Components</li>
+                    @if (Auth::user()->role == 'admin')
                     <li>
                         <a href="#" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Setting Diskon</span>
@@ -125,19 +126,24 @@
                             <li><a href="#">Data Barang</a></li>
                         </ul>
                     </li>
+                    @endif
                     <li>
                         <a href="#" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Transaksi</span>
                         </a>
                     </li>
+                    @if (Auth::user()->role == 'kasir')
                     <li>
                         <a href="#" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Laporan</span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </div>
+
+       
         <!--**********************************
             Sidebar end
         ***********************************-->

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,16 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('index');
+});
+// Route::get('/home', function () {
+//     return view('home');
+// });
+route::get('/login',[AuthController::class,'index'])->name('login');
+route::post('/postlogin',[AuthController::class,'postlogin'])->name('postlogin');
+route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+Route::group(['middleware'=> ['auth','checkrole:admin,kasir']], function (){
+    route::get('/home',[HomeController::class,'index'])->name('home');
 });
