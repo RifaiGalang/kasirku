@@ -19,7 +19,7 @@ class UserController extends Controller
     }
     public function store(Request $request){
 
-        User::create([
+        User::Create([
             'name'     => $request->name,
             'email'    => $request->email,
             'password' => Hash::make($request->password),
@@ -30,7 +30,6 @@ class UserController extends Controller
     public function update(Request $request, $id){
 
         User::where('id', $id)
-        ->where('id', $id)
         ->update([
             'name'     => $request->name,
             'email'    => $request->email,

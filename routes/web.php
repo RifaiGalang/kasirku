@@ -33,6 +33,7 @@ Route::group(['middleware'=> ['auth','checkrole:admin']], function (){
     route::get('/user',[UserController::class,'index']);
     route::post('/user/store',[UserController::class,'store']);
     route::post('/user/update/{id}',[UserController::class,'update']);
+    route::get('/user/update/{id}',[UserController::class,'updateview']);
     route::get('/user/destroy/{id}',[UserController::class,'destroy']);
 });
 

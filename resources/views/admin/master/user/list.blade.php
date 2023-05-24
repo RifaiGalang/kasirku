@@ -4,7 +4,6 @@
             Content body start
         ***********************************-->
 <div class="content-body">
-
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
@@ -27,50 +26,7 @@
                                   Tambah Data
                                       </button>
                                  </div>
-                            <div class="table-responsive">
-                            </div>
-                            <div class="card-body">
-                                    <table class="table table-striped table-bordered zero-configuration">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Email</th>
-                                                <th>Role</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php
-                                            $no = 1;
-                                            @endphp
-                                            @foreach ($data_user as $row)
-                                            <tr>
-                                                <td>{{ $no++ }}</td>
-                                                <td>{{ $row->name }}</td>
-                                                <td>{{ $row->email }}</td>
-                                                <td>{{ $row->role }}</td>
-                                               <td>
-                                                <a href="#modalEdit{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-primary"> <i class="fa fa-edit">Edit</i></a>
-                                                <a href="#modalHapus{{ $row->id }}" data-toggle="modal"  class="btn btn-xs btn-danger"> <i class="fa fa-trash"></i>Hapus</a>
-                                               </td>
-                                            </tr>
-                                            @endforeach 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #/ container -->
-        </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
-        
-         <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog ">
                  <div class="modal-content">
                   <div class="modal-header">
@@ -107,16 +63,58 @@
                   </form>
                  </div>
               </div>
-        </div>
-
-        @foreach ($data_user as $d)
-        <div class="modal fade" id="modalEdit{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog ">
-                 <div class="modal-content">
-                  <div class="modal-header">
-                   <h5 class="modal-title">Edit Data User</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        </div> 
+                            </div>
+                            
+                            <div class="card-body">
+                                    <table class="table table-striped table-bordered zero-configuration">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>Email</th>
+                                                <th>Role</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php
+                                            $no = 1;
+                                            @endphp
+                                            @foreach ($data_user as $row)
+                                            <tr>
+                                                <td>{{ $no++ }}</td>
+                                                <td>{{ $row->name }}</td>
+                                                <td>{{ $row->email }}</td>
+                                                <td>{{ $row->role }}</td>
+                                               <td>
+                                                <a  href="#modalupdate{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-primary"data-target="#modalupdate{{ $row->id }}"> <i class="fa fa-edit">Edit</i></a>
+                                                <a href="#modalHapus{{ $row->id }}" data-toggle="modal"  class="btn btn-xs btn-danger"> <i class="fa fa-trash"></i>Hapus</a>
+                                               </td>
+                                            </tr>
+                                            @endforeach 
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        @foreach ($data_user as $d)
+        <div class="modal fade" id="modalupdate{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Data User</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                   
                     <form method="POST" action="/user/update/{{ $d->id }}">
                         @csrf
                       <div class="modal-body">
@@ -143,9 +141,13 @@
                       <button type="button" class="btn btn-secondary" data-dismiss="modal" ><i class="fa fa-undo"></i>Close</button>
                      <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>Save changes</button>
                      </div>
+                   
                   </form>
+                  
                  </div>
+                 
               </div>
+              
         </div>
         @endforeach
 

@@ -123,7 +123,7 @@
                         <ul aria-expanded="false">
                             <li><a href="/user">Data User</a></li>
                             <li><a href="/jenisbarang">Data Jenis Barang</a></li>
-                            <li><a href="barang">Data Barang</a></li>
+                            <li><a href="/barang">Data Barang</a></li>
                         </ul>
                     </li>
                     
