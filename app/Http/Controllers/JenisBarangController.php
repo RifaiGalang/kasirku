@@ -18,7 +18,7 @@ class JenisBarangController extends Controller
     }
     public function store(Request $request){
 
-            jenisbarang::create([
+            JenisBarang::create([
             'nama_jenis' => $request->nama_jenis,
             
         ]);
@@ -26,7 +26,7 @@ class JenisBarangController extends Controller
     }
     public function update(Request $request, $id){
 
-        jenisbarang::where('id', $id)
+        JenisBarang::where('id', $id)
         ->where('id', $id)
         ->update([
             'nama_jenis' => $request->nama_jenis,

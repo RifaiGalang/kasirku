@@ -67,7 +67,7 @@
             </div>
             <!-- #/ container -->
             </div>
-                            {{-- <div class="table-responsive">
+                         <div class="table-responsive">
                             </div>
                             <div class="card-body">
                                     <table class="table table-striped table-bordered zero-configuration">
@@ -104,7 +104,7 @@
                 </div>
             </div>
             <!-- #/ container -->
-        </div> --}}
+        </div> 
         <!--**********************************
             Content body end
         ***********************************-->

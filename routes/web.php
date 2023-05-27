@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\JenisBarangController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\DiskonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +55,9 @@ Route::group(['middleware'=> ['auth','checkrole:admin']], function (){
     route::get('/barang/update/{id}',[BarangController::class,'update']);
     route::get('/barang/destroy/{id}',[BarangController::class,'destroy']);
  
-    
+      // CRUD DISKON
+    route::get('/setdiskon',[DiskonController::class,'index']);
+    route::post('/setdiskon/update/{id}',[DiskonController::class,'update']);
 
 });
 
