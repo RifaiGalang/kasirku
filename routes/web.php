@@ -7,7 +7,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\JenisBarangController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DiskonController;
+<<<<<<< HEAD
 use App\Http\Controllers\EditController;
+=======
+>>>>>>> 688e55c7d3d74e7e04f05ea650624196db57177e
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +55,7 @@ Route::group(['middleware'=> ['auth','checkrole:admin']], function (){
     route::post('/barang/update/{id}',[BarangController::class,'update']);
     route::get('/barang/destroy/{id}',[BarangController::class,'destroy']);
  
+<<<<<<< HEAD
      // CRUD DISKON
      route::get('/setdiskon',[DiskonController::class,'index']);
      route::post('/setdiskon/update/{id}',[DiskonController::class,'update']);
@@ -62,6 +66,11 @@ Route::group(['middleware'=> ['auth','checkrole:admin']], function (){
  
     
  
+=======
+      // CRUD DISKON
+    route::get('/setdiskon',[DiskonController::class,'index']);
+    route::post('/setdiskon/update/{id}',[DiskonController::class,'update']);
+>>>>>>> 688e55c7d3d74e7e04f05ea650624196db57177e
 
 });
 Route::group(['middleware'=> ['auth','checkrole:admin,kasir']], function (){

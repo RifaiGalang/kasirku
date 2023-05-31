@@ -65,10 +65,16 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
         <!-- #/ container -->
     </div>
     {{-- <div class="table-responsive">
+=======
+            <!-- #/ container -->
+            </div>
+                         <div class="table-responsive">
+>>>>>>> 688e55c7d3d74e7e04f05ea650624196db57177e
                             </div>
                             <div class="card-body">
                                     <table class="table table-striped table-bordered zero-configuration">
@@ -105,6 +111,7 @@
                 </div>
             </div>
             <!-- #/ container -->
+<<<<<<< HEAD
         </div> --}}
     <!--**********************************
                                 Content body end
@@ -115,6 +122,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Create {{ $title }}</h5>
+=======
+        </div> 
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+         <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog ">
+                 <div class="modal-content">
+                  <div class="modal-header">
+                   <h5 class="modal-title">Create {{ $title}}</h5>
+>>>>>>> 688e55c7d3d74e7e04f05ea650624196db57177e
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
                 </div>
                 <form method="POST" action="/jenisbarang/store">
