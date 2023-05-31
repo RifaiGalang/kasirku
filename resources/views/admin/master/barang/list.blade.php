@@ -30,6 +30,7 @@
                             <div class="table-responsive">
                             </div>
                             <div class="card-body">
+
                                     <table class="table table-striped table-bordered zero-configuration">
                                         <thead>
                                             <tr>
@@ -74,6 +75,9 @@
             </div>
             <!-- #/ container -->
         </div>
+        
+        
+        
         <!--**********************************
             Content body end
         ***********************************-->
@@ -119,6 +123,7 @@
                      </div>
                     </div>
     </div>
+    
 
         @foreach($data_barang as $d)
         <div class="modal fade" id="modalupdate{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -159,9 +164,9 @@
                      <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>Save changes</button>
                      </div>
                   </form>
+                 </div>           
                  </div>
               </div>
-        </div>
         @endforeach
 
         @foreach ($data_barang as $c)
@@ -186,5 +191,6 @@
                  </div>
               </div>
         </div>
+      
         @endforeach
         @endsection
