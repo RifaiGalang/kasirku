@@ -7,10 +7,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\JenisBarangController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DiskonController;
-<<<<<<< HEAD
-use App\Http\Controllers\EditController;
-=======
->>>>>>> 688e55c7d3d74e7e04f05ea650624196db57177e
+use App\Http\Controllers\TransaksiController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,24 +55,25 @@ Route::group(['middleware'=> ['auth','checkrole:admin']], function (){
     route::post('/barang/update/{id}',[BarangController::class,'update']);
     route::get('/barang/destroy/{id}',[BarangController::class,'destroy']);
  
-<<<<<<< HEAD
+
      // CRUD DISKON
      route::get('/setdiskon',[DiskonController::class,'index']);
      route::post('/setdiskon/update/{id}',[DiskonController::class,'update']);
 
-       // EDIT DATA USER 
-     route::get('/user/edit',[EditController::class,'index']);
-     route::post('/user/edit/update/{id}',[EditController::class,'update']);
+    //    // EDIT DATA USER 
+    //  route::get('/user/edit',[EditController::class,'index']);
+    //  route::post('/user/edit/update/{id}',[EditController::class,'update']);
  
-    
+   
  
-=======
+
       // CRUD DISKON
     route::get('/setdiskon',[DiskonController::class,'index']);
     route::post('/setdiskon/update/{id}',[DiskonController::class,'update']);
->>>>>>> 688e55c7d3d74e7e04f05ea650624196db57177e
+
 
 });
 Route::group(['middleware'=> ['auth','checkrole:admin,kasir']], function (){
     route::get('/home',[HomeController::class,'index'])->name('home');
+    route::get('/transaksi',[TransaksiController::class,'index']);
 });

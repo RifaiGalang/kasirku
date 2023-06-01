@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('tbl_transaksi', function (Blueprint $table) {
             $table->id();
             $table->string('no_transaksi');
-            $table->date('tgl_transaksi')->nullable();
-            $table->integer('diskon')->nullable();
-            $table->biginteger('total_bayar')->nullable();
+            $table->integer('barang_id');
+            $table->biginteger('total_bayar');
+            $table->integer('uang');
+            $table->integer('kembalian');
             $table->timestamps();
         });
     }
