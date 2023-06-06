@@ -34,7 +34,7 @@
     <div class="table-responsive">
 
             <!-- #/ container -->
-            </div>
+            {{-- </div>
                          <div class="table-responsive">
 
                             </div>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- #/ container -->
 
         </div> 
@@ -100,17 +100,12 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>No.Transaksi</label>
-                            <input type="text" class="form-control" name="no_transaksi" placeholder="No.Transaksi ..."
-                                required>
-                        </div>
-                        <div class="form-group">
                             <label>Nama Barang</label>
                             <input type="text" class="form-control" name="barang_id" placeholder="nama barang ..."
                                 required>
                         </div>
                         <div class="form-group">
-                            <label>Total Bayar</label>
+                            <label>jumlah</label>
                             <input type="text" class="form-control" name="total_bayar" placeholder="Total Bayar..."
                                 required>
                         </div>

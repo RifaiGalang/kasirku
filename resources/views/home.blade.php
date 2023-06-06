@@ -35,8 +35,8 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
+                                                <td>admin</td>
+                                                <td>admin</td>
                                                <td>
                                                 <a href="#" class="btn btn-xs btn-primary"> <i class="fa fa-edit">Edit</i></a>
                                                 <a href="#" class="btn btn-xs btn-danger"> <i class="fa fa-trash"></i>Hapus</a>

@@ -76,4 +76,7 @@ Route::group(['middleware'=> ['auth','checkrole:admin']], function (){
 Route::group(['middleware'=> ['auth','checkrole:admin,kasir']], function (){
     route::get('/home',[HomeController::class,'index'])->name('home');
     route::get('/transaksi',[TransaksiController::class,'index']);
+    route::get('/create',[TransaksiController::class,'create']);
+    route::post('/store',[TransaksiController::class,'store']);
+    route::delete('/destroy/{id}',[TransaksiController::class,'destroy']);
 });

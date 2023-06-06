@@ -25,20 +25,20 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-    public function registrasi(){
-        return view('Login.registrasi');
-    }
+    // public function registrasi(){
+    //     return view('Login.registrasi');
+    // }
     
-    public function simpanregistrasi(Request $request){
-        // dd($request->all());
+    // public function simpanregistrasi(Request $request){
+    //     // dd($request->all());
 
-        User::create([
-            'name'=> $request->name,
-            'level'=> 'pegawai',
-            'email'=> $request->email,
-            'password'=> bcrypt($request->password),
-            'remember_token'=> Str::random(60),
-        ]);
-        return view('welcome');
-    }
+    //     User::create([
+    //         'name'=> $request->name,
+    //         'level'=> 'pegawai',
+    //         'email'=> $request->email,
+    //         'password'=> bcrypt($request->password),
+    //         'remember_token'=> Str::random(60),
+    //     ]);
+    //     return view('welcome');
+    // }
 }
